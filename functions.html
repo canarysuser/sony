@@ -1,0 +1,66 @@
+<html>
+    <head>
+        <title>Functions in JS</title>
+    </head>
+    <body>
+        <h1>functions in JS</h1>
+
+        <script>
+
+            function f1() { 
+                console.log("f1() called.");
+            }
+            f1();
+            
+            function f2( arg1 ) { 
+                if(arguments.length==0){
+                    console.log('required arguments not passed.'); 
+                    return;
+                }
+                console.log(`f2(${arg1}) called.`);
+                if(arguments.length>1) { 
+                    if(typeof arguments[1] === 'string')
+                        console.log('string argument');
+                    else if (typeof arguments[1] ==='number') 
+                        console.log('number argument');
+                     
+                    console.log('multiple arguments passed: ')
+                    for(var arg of arguments) { 
+                        console.log(arg);
+                    }
+                }
+            }
+            f2(100);
+            f2();
+            f2("P1", "P2");
+            f2(999, 999, 999);
+
+            var f3 = function() { console.log("f3() called.")}
+            f3(); 
+
+            var f4 = function (arg1) { console.log("f4("+arg1+") called."); return arg1 + arg1;}
+            var item = f4(300); 
+            console.log(`f4(400) returns ${f4(400)}`)
+            console.log(`f4("string") returns ${f4("String")}`)
+            f4(9);
+
+            //Immediately Invoked Function Expression (IIFE)
+            (
+                function(arg) { 
+                    console.log('IIFE', arg);
+                }
+            )("SONY"); 
+            //this pattern is used by library developers like jQuery, React, Angular 
+            // to register the library on load.
+
+            //ES6 - new way of writing functions 
+            //arrow functions (lambdas => )
+            var f5 = (a) => {
+                console.log('arrow function f5() invoked.')
+            }
+            f5(99);
+
+        </script>
+
+    </body>
+</html>

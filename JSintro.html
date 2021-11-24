@@ -1,0 +1,93 @@
+<html>
+
+<head>
+    <title>JS introduction</title>
+</head>
+
+<body>
+    <h1>working with JS</h1>
+    <script>
+        // window.alert('Hello World!');
+        /* Multi line comment */
+
+        var i = 10;
+        console.log("value of i is ", i);
+        //Strings in JS can be written using "" or '' or `` marks 
+        //"Valid string' in JS ", 'Javascript" string '
+        i = "SONY";
+        console.log("value of i is ", i);
+        i = i + 2021;
+        console.log("value of i is ", i);
+
+        //collect the input from the user - prompt dialog box 
+        //var name = prompt('Enter your name'); 
+        // `...` -> ES6 templated strings (interpolated strings) 
+        // back-quote is the character just beside  the number key 1 
+        //console.log(`Welcome ${name} to JS programming.`); 
+        //${} is the interpolation symbol, which replaces the placeholder with the value 
+        // console.log('Welcome ' + name + ' to JS programming');
+
+        //get the age from user using the prompt dialog. 
+        //add 10 to the age and display the result. 
+        //age: 75 
+        //age = age + 10 
+        //age => 7510
+
+        // var firstNum = parseInt(prompt('Enter first number'))
+        // var secondNum = parseInt(prompt('enter second number')); 
+        // if(firstNum >  secondNum)
+        //     console.log(`${firstNum} is greater than ${secondNum}`);
+        // else 
+        //     console.log(`${secondNum} is greater than ${firstNum}`);
+
+        var counter = 0;
+        //document object refers to the HTML document in the HTML Body 
+        while (counter < 10) {
+            document.write(" Counter is " + counter);
+            counter++;
+        }
+
+        function writeHeaders() {
+            for (var index = 1; index < 7; index++) {
+                document.write(`<h${index}>Heading ${index} </h${index}>`);
+            }
+        }
+
+        //variable-length arrays
+        var arr = new Array(10); //initial-size 
+        arr[0] = 10;
+        arr[8] = 80;
+        arr[15] = 1000;
+        console.log(`Elements in array ${arr}`)
+        console.log(arr);
+
+        arr[1] = [10, 20, 30, 40];
+        console.log(arr[1][0]);
+
+        for (var item of arr) { console.log(item); }
+
+        //built-in functions of array objects 
+        let fruits = ["apples", "oranges", "melons"];
+        console.log('Original array', fruits);
+        fruits.push("grapes");
+        console.log("After pushing, ", fruits);
+        var item = fruits.pop();
+        console.log("After popping " + item + ", array is", fruits);
+        fruits.unshift("berries");
+        console.log("After unshifting, ", fruits);
+        item = fruits.shift();
+        console.log("After shifting " + item + ", array is ", fruits);
+        console.log('Count of items: ', arr.length);
+
+
+        //Other built-in functions: String, Date, Math,
+        var dt = new Date(2021, 0, 30);
+        console.log(dt);
+        var str = "Hello World";
+        console.log(str.replace(/l/ig, "ZZ"));
+
+    </script>
+
+</body>
+
+</html>

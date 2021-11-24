@@ -1,0 +1,87 @@
+<html>
+
+    <head>
+        <title>First</title>
+    </head>
+    <body>
+        <h1>Welcome to HTML</h1>
+        <h2>Heading 2</h2> 
+        <h6>Heading 6</h6>
+
+        <p>
+            Paragraph tag. 
+            <br/> <b>bold</b> <strong>Strong</strong>
+            <br/> <i>italics</i> <em>emphasis</em>
+            <br/> <u>underline</u>
+        </p>
+        <h3>List content</h3>
+        <!-- Unordered lists - bulleted lists type="circle" | "disc" | "square" | custom  -->
+        <ul type="circle"> 
+            <!-- contains a list of items defined using li -->
+            <li>Item 1</li>
+            <li>Item 2</li>
+
+        </ul>
+        <!-- ordered list of items with the type="A" | "a" | "1" | "I" | "i"-->
+        <ol type="a">
+            <li>Item 1</li>
+            <li>Item 2</li>
+        </ol>
+        <!-- definition lists -->
+        <dl>
+            <dt> <!-- definition term --> Term </dt>
+            <dd><!-- definition description --> 
+                    the term description 
+            </dd>
+            <dt>Term 2 </dt>
+            <dd>Term 2 description</dd>
+        </dl>
+        <!-- tabular lists - table -->
+        <table border="1">
+            <caption>Table of Items</caption>
+            <thead>
+                <tr>
+                    <th>Sl. No</th>
+                    <th>Item Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Item 1</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Item 2</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <!-- summarize the table content -->
+                <tr>
+                    <td>Footer summary</td>
+                </tr>
+            </tfoot>
+        </table>
+        <table border="1">
+            <tr>
+                <td>Cell 0,0</td>
+                <td>Cell 0,1</td>
+                <td>Cell 0,2</td>
+                <td>Cell 0,3 </td>
+            </tr>
+            <tr>
+                <td colspan="2">Cell 1,0-1,1</td>
+                <td rowspan="2">Cell 1,2 2,2</td>
+                <td>Cell 1,3</td> 
+            </tr>
+            <tr>
+                <td colspan="2" rowspan="2">Cell 2,0 - 3,1</td>
+                <td>Cell 2, 3</td>
+            </tr>
+            <tr>
+                <td colspan="2">Cell 3,2 - 3,3</td>
+            </tr>
+        </table>
+    </body>
+
+</html>

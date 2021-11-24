@@ -1,0 +1,158 @@
+<html>
+    <head><title>form elements</title></head>
+    <body>
+
+        <h1>form Elements</h1>
+
+        
+            <!-- attributes of the form tag: 
+                action = "URL" -> action to trigger when the form is submitted 
+                method="GET" | "POST" | "PUT" | "DELETE"
+                HTTP-GET -> get a resource from the server 
+                         -> pass the data from the client side using QUery Strings 
+                         -> content which is added after the ? in the URL 
+                         -> http://abc.com?name=Sony&country=IN
+                         -> content that is included after the ? is query string 
+                         -> content is visible across the network,
+                         -> do not include sensitive info 
+                         -> content flows thru the HTTP-Header 
+                HTTP-POST -> post a resource to the server 
+                        -> the resource (data) is sent via HTTP-Body section 
+                        -> not visible over the network 
+                HTTP-PUT -> update resources on the server with the new data. 
+                HTTP-DELETE -> delete a resource on the server 
+
+                novalidate attribute - skips the validations on the form elements 
+                            -> custom validations will be required to replace default validations
+                id and name are other common attributes
+            -->
+            <!-- FORM Input elements 
+                input element 
+                select element 
+                textarea element 
+
+                input element types: text, password, email, number, range, date, time, url, 
+                                     hidden, submit, reset, radio, checkbox
+
+                input elements also provide validator attributes : 
+                    required -> field value is required 
+                    min and max -> min and max values accepted 
+                    pattern -> Regular expression pattern expected 
+                    maxLength -> string max length 
+                
+                input element attributes 
+                    id and name 
+                    placeholder 
+                    value -> value held by the element 
+                    readonly  value cannot be modified 
+                    disabled -> the control is not accesible
+
+                <input type="text" id="t1" value="100"/>
+                
+                select element - represents a dropdown list of values 
+                    -> select a single item or multiple items (hold the CTRL)
+                    -> has child elements for options
+                        -> optgroup -> option group 
+                            -> option -> for each option 
+                        -> option -> for each option
+
+            Status: Registered | Not registered 
+            <input type="radio" name="status">Registered
+            <input type="radio" name="status">Not Registered
+            
+            Gender: Male|Female|Others 
+
+                textarea 
+                -> multi-line text box to collect data across multiple rows and columns 
+
+            
+            -->
+        <form> 
+            <table>
+                <tr>
+                    <td>Enter Name</td>
+                    <td>
+                        <input type="text" name="txtName" placeholder="Your Name"
+                        required size="100" maxlength="50" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="password" name="txtPwd" placeholder="Enter password"
+                            required maxlength="15"/>
+                    </td>
+                    <td>
+                        <input type="password" name="txtCPwd" placeholder="Confirm password"
+                            required maxlength="15"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="email" name="txtEmail" placeholder="Enter Email"/>
+                    </td>
+                    <td>
+                        <input type="date" name="txtDate" placeholder="Choose Birthdate"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="range" name="txtRange" placeholder="Salary Range"
+                            max="50000" min="25000" value="35000"/>
+                    </td>
+                    <td>
+                        <input type="number" name="txtNumber" placeholder="Age" 
+                            max="100" min="18" value="50"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Choose country: </td>
+                    <td>
+                        <select name="countryChoice">
+                            <optgroup label="Asia">
+                                <option value="1">India</option>
+                                <option value="2">Japan</option>
+                                <option value="3">China</option>
+                            </optgroup>
+                            <optgroup label="Europe">
+                                <option value=4>Italy</option>
+                                <option value="5">Spain</option>
+                            </optgroup>
+                            <option value="6">USA</option>
+                            <option value="7">RSA</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <input type="submit" name="btnSubmit" value="Save"/>
+                        <input type="reset" name="btnReset" value="Clear"/>
+                    </td>
+                </tr>
+            </table>
+        </form>
+
+        <!-- OTHER HTML ELEMENTS -->
+        <div>This tag can hold any other HTML elements </div>
+        <header>
+            Contains the header
+        </header>
+        <section>
+            <header>Section Header</header>
+            <div>Section content</div>
+            <footer>Section footer</footer>
+        </section>
+        <article>
+            <header>Article header</header>
+            <div>Article content</div>
+            <footer>Article footer</footer>
+        </article>
+        <nav>
+            <a href="#">Link 1</a>
+            <a href="#">Link 2</a>
+            <a href="#">Link 3</a>
+        </nav>
+        <footer>
+            Page footer
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,74 @@
+<html>
+    <head>
+        <title>Objects in JS</title>
+    </head>
+    <body>
+        <h1>Objects in JS</h1>
+        <script>
+
+            var obj = new Object(); 
+            obj.x = 10; 
+            obj.y = 20; 
+            obj['school name'] = 'Presidency School';
+            console.log(`Object properties: x=${obj.x} and y=${obj.y}`);
+            console.log(`Object properties: x=${obj['x']} and y=${obj['y']}`);
+            console.log(`School Name : ${obj["school name"]}`);
+
+            for(var prop in obj){ console.log(prop);}
+
+            var obj2 = { x: 10, y: 20}; 
+            console.log(`Object properties: x=${obj2.x} and y=${obj2.y}`);
+
+            console.log(obj, obj2)
+            
+
+            //ES 5 implementation of custom types/classes  
+            //Constructor functions - used to define new types in JS
+            function Student(firstName, lastName) { 
+                this.firstName = firstName;
+                this.lastName = lastName; 
+            }
+            var stud1 = new Student('SONY', 'WORLD'); 
+            console.log(stud1.firstName, stud1.lastName);
+
+            Student.prototype  = { 
+                getFirstName : function() { return this.firstName;},
+                getLastName : function() { return this.lastName; }, 
+                getFullName : function() { return this.firstName + ' ' + this.lastName},
+                setFirstName : function(name) { this.firstName = name},
+                setLastName : function(name) { this.lastName = name;}
+            };
+
+            var stud2 = new Student('SONY', 'WORLD'); 
+            console.log(stud2.getFirstName(), stud2.getFullName());
+            var stud3 = new Student('HP', 'Enterprises');
+            stud3.setLastName('Global');
+            console.log(stud3.getLastName(), stud3.getFullName());
+            
+
+            //ES6 
+            class Product { 
+
+                constructor(pName, price, stock ){ 
+                    this.productName = pName; 
+                    this.unitPrice = price; 
+                    this.stockLevel = stock;
+                }
+                //methods/functions
+                showDetails() { 
+                    console.log(this.productName, this.unitPrice, this.stockLevel);
+                }
+
+                //Properties - getter/setter methods | accessor/mutator methods 
+                get pName() { return this.productName;}; 
+                set pName(value) { this.productName=value;}
+            }
+
+            var p1 = new Product('Markers', 100, 100);
+            p1.showDetails()
+            p1.pName='Pens';
+            p1.showDetails()
+
+        </script>
+    </body>
+</html>

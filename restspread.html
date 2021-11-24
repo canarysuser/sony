@@ -1,0 +1,60 @@
+<html>
+
+<head>
+    <title>Rest and Spread Operators</title>
+</head>
+<body>
+    <h1>Working with Rest/Spread operators </h1>
+
+    <script>
+
+        let arr = [ 10, 20, 30, 40]; 
+        let a = arr[0]; 
+        console.log(a)
+        let [first, second] = [...arr];
+        console.log(first, second)
+        let [a1, ...arr2] = [...arr]; 
+        //...REST = ...SPREAD
+        console.log(a1, 'second arr', arr2)
+
+        let user = { username: 'sample', password:'pwd'}; 
+        let {username} = {...user};
+        console.log(username)
+
+        let obj2 = { username: 'sample', lastLoggedIn:'23-11-2021'};
+        let {...newObj} = {...user, ...obj2};
+        let newObj2 = {...user, ...obj2};
+        console.log(newObj2)
+
+        function REST(arg1, ...args) { 
+            console.log(arg1, 'other parameters', args)
+            return { arg1, ...args};
+        }
+        REST(10);
+        var obj = REST(10, 20, 30, 40, 50);
+        console.log(obj)
+
+        var product = { id:1, pname:'markers', price:500, stock:50 };
+
+        
+    </script>
+<script>
+    function formSubmit(e) {
+            e.preventDefault();
+         }
+         function assignValues() { 
+             console.log(product)
+             document.getElementById("pname").value = product.pname;
+         }
+         function handleChange(event) { 
+            product[event.target.name]=event.target.value; 
+            console.log(product)
+         }
+</script>
+    <form onsubmit="formSubmit(event)" >
+        Product Name: <input type="text" id="pname" name="pname" value='' 
+        onfocus="assignValues()" onchange="handleChange(event)"  />
+    </form>
+
+</body>
+</html>

@@ -1,0 +1,94 @@
+<html>
+    <head>
+        <title>JS with DOM </title>
+
+        <script>
+
+            window.onload = function() { 
+                //alert('Hi from window.onload');
+            }
+            function btnClick() { 
+                //grab the div element and insert content to that element. 
+                var d = document.getElementById('div1');
+                d.innerHTML = 'Now is: ' + new Date().toString();
+            }
+            function btn2Click() { 
+                var d = document.getElementById("div2"); 
+                if(d.className=="normal"){
+                    d.className = "highlight";
+                    d.innerHTML = "Highlighted CSS class applied.";
+                } else { 
+                    d.className = "normal";
+                    d.innerHTML = "Normal CSS class applied.";
+                }
+            }
+        </script>
+        <style>
+            .normal { 
+                background-color: lightyellow;
+            }
+            .highlight { 
+                background-color: yellow;
+            }
+            .textInput { 
+                border: 1px solid gray; 
+                padding:2px;
+                margin:1px;
+                min-height: 30px;
+            }
+            .textInput:focus { 
+                background-color: rgb(204, 234, 248);
+            }
+            .textError { 
+                border: 1px solid red;
+                background-color: rgb(245, 189, 189); 
+            }
+            .invalid { 
+                display: block;
+                color:red;
+            }
+            .valid { 
+                display:none;
+            }
+        </style>
+
+    </head>
+    <body>
+        <h1> JS WIth HTML DOM</h1>
+        <script>
+            function formSubmit(e) { 
+                e.preventDefault();
+                var userName = document.getElementById('txtName'); 
+                var message = document.getElementById('textMessage');
+                if(userName.value.length) {
+                    userName.className = "textInput";
+                    message.className = "valid";
+                } else { 
+                    userName.className = "textError";
+                    message.className = "invalid";
+                }
+            }
+        </script>
+
+        <form onsubmit="formSubmit(event)" novalidate>
+            <div>
+                <label for="txtName">User Name <span style="color:red">*</span></label>
+                <input type="text" name="txtName" id="txtName" class="textInput"/>
+                <br/>
+                <span id="textMessage" class="valid"> First Name is required.</span>
+            </div>
+            <input type="submit" value="Validate"/>
+        </form>
+
+
+        <div id="div1" style="border:1px solid black; height:100px"></div>
+        <button id="btn1" onclick="btnClick()">Click Me</button>
+        <div id="div2" class="normal"> Normal CSS class applied.</div>
+        <button id="btn2" onclick="btn2Click()">Toggle styles</button>
+
+       
+
+
+
+    </body>
+</html>
